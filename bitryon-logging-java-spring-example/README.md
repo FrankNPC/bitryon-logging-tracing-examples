@@ -23,7 +23,7 @@ bitryon logger is the next generation logger and tracing solution, seamlessly un
 
 5: bitryon logger can co-exist with any logger like log4j.
 
-More details please check out [www.bitryon.io](https://www.bitryon.io) and [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-examples/tree/master/bitryon-logging-java-spring-example) 
+More details please check out [www.bitryon.io](https://www.bitryon.io) and [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-tracing-examples/tree/master/bitryon-logging-java-spring-example) 
 
 more language supports coming soon
 
@@ -41,10 +41,10 @@ more language supports coming soon
 ## Configure Logger
 
 1: Load configuration and refer logger by LoggerFactory / LoggerProvider:
-for LoggerFactory, place bitryon_logger.properties under the resource path. See [bitryon-logging-java-spring-example/bitryon_logger.properties](https://github.com/FrankNPC/bitryon-logging-examples/blob/master/bitryon-logging-java-spring-example/src/main/resources/bitryon_logger.properties) 
+for LoggerFactory, place bitryon_logger.properties under the resource path. See [bitryon-logging-java-spring-example/bitryon_logger.properties](https://github.com/FrankNPC/bitryon-logging-tracing-examples/blob/master/bitryon-logging-java-spring-example/src/main/resources/bitryon_logger.properties) 
 
 
-2: Load configuration by spring boot, see [bitryon-logging-java-spring-example/application.yml](https://github.com/FrankNPC/bitryon-logging-examples/blob/master/bitryon-logging-java-spring-example/src/main/resources/application.yml) 
+2: Load configuration by spring boot, see [bitryon-logging-java-spring-example/application.yml](https://github.com/FrankNPC/bitryon-logging-tracing-examples/blob/master/bitryon-logging-java-spring-example/src/main/resources/application.yml) 
 
 Both way cannot co-exists. 
 
@@ -172,7 +172,7 @@ Sample:
 	// In Spring 
 	
 		public static void main(String[] args) {
-			//io.bitryon.logger.boostrap.LoggingProxyInitiation.premain(null); // must load before everything. or add https://github.com/FrankNPC/bitryon-logging-examples/blob/master/bitryon-logging-java-spring-example/src/main/resources/META-INF/spring.factories 
+			//io.bitryon.logger.boostrap.LoggingProxyInitiation.premain(null); // must load before everything. or add https://github.com/FrankNPC/bitryon-logging-tracing-examples/blob/master/bitryon-logging-java-spring-example/src/main/resources/META-INF/spring.factories 
 			new SpringApplicationBuilder(ServerBootApplication.class).run(args);
 		}
 	
@@ -209,7 +209,7 @@ Sample:
  - register account on dev-portal.bitryon.io or prd-portal.bitryon.io separately.
  - create and active your organization.
  - create and active the application and get the app_key for the agent.
- - download and configure [bitryon-logging-agent](https://github.com/FrankNPC/bitryon-logging-examples/tree/master/bitryon-logging-agent) to upload the logs into bitryon.io for traces.
+ - download and configure [bitryon-logging-agent](https://github.com/FrankNPC/bitryon-logging-tracing-examples/tree/master/bitryon-logging-agent) to upload the logs into bitryon.io for traces.
 
 
 ## Trace
@@ -284,12 +284,12 @@ Do this in spring will automatically bring up the methods from beans and run the
     -  If there is no configs from spring, it will go to LoggerFactory and bitryon_logger.properties to get the LoggerProvider as fallback
 
  - 3, configure http client by adding LoggingHttpClientHeaderWriterInterceptor to write header HTTP_HEADER_STEP_LOG_ID(X-Step-Log-Id), so the next app/service/web-server can pick it up. 
-See [UserServiceSubscriber](https://github.com/FrankNPC/bitryon-logging-examples/blob/master/bitryon-logging-java-spring-example/src/main/java/io/bitryon/example/web/config/UserServiceSubscriber.java)
+See [UserServiceSubscriber](https://github.com/FrankNPC/bitryon-logging-tracing-examples/blob/master/bitryon-logging-java-spring-example/src/main/java/io/bitryon/example/web/config/UserServiceSubscriber.java)
 
  - 4, configure web server by adding FilterRegistrationBean< LoggingHttpRequestWebFilter > to pick up header HTTP_HEADER_STEP_LOG_ID(X-Step-Log-Id) from the http request. 
-See [ExampleWebServerConfiguration](https://github.com/FrankNPC/bitryon-logging-examples/blob/master/bitryon-logging-java-spring-example/src/main/java/io/bitryon/example/web/config/ExampleWebServerConfiguration.java)
+See [ExampleWebServerConfiguration](https://github.com/FrankNPC/bitryon-logging-tracing-examples/blob/master/bitryon-logging-java-spring-example/src/main/java/io/bitryon/example/web/config/ExampleWebServerConfiguration.java)
 
  
-### see example [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-examples/tree/master/bitryon-logging-java-spring-example) 
+### see example [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-tracing-examples/tree/master/bitryon-logging-java-spring-example) 
 
 

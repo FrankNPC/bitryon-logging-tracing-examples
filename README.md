@@ -14,7 +14,7 @@ bitryon logger is the next generation logger and tracing solution, seamlessly un
 
 5: bitryon logger can co-exist with any logger like log4j.
 
-More details please check out [www.bitryon.io](https://www.bitryon.io) and [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-examples/tree/master/bitryon-logging-java-spring-example) 
+More details please check out [www.bitryon.io](https://www.bitryon.io) and [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-tracing-examples/tree/master/bitryon-logging-java-spring-example) 
 
 more language supports coming soon
 
