@@ -1,0 +1,62 @@
+2025-08-11 16:01:40.594|main-http-nio-80-exec-1-40-5|5o0ku57lL7LVoG3N4Pqm89byaX5tBwHi|4|JSON|
+MedicService.java#io.bitryon.example.web.service.MedicService#query#-2222222#|
+[
+    {
+        "sessionId": "xxx",
+        "page": {
+            "size": 123,
+            "offset": 0
+        }
+    }
+]
+2025-08-11 16:01:41.300|main-http-nio-80-exec-1-40-5|5o0ku57lL7LVoG3N4Pqm89byaX5tBwHi|15|JSON|
+MedicService.java#io.bitryon.example.web.service.MedicService#query#-111111#R|
+[
+    [
+        {
+            "user": {
+		        "name": "randome guy probably",
+		        "id": 123,
+		        "age": null,
+		        "birthday": "2025-08-10T15:42:17.123+02",
+		        "driverLisenceId": "a number that you can't know"
+            },
+            "medicConditionDO": {
+                "id": 321,
+                "deceases": "idk, maybe conding fever",
+                "timeCreated": 111111111111111,
+                "userId": 123
+            }
+        },
+        {
+            "user": {
+                "name": "randome guy probably",
+		        "id": 123,
+		        "age": null,
+		        "birthday": "2025-08-10T15:42:17.123+02",
+		        "driverLisenceId": "a number that you can't know"
+            },
+            "medicConditionDO": {
+                "id": 654,
+                "deceases": "idk, maybe conding fever",
+                "timeCreated": 222222222222222,
+                "userId": 456
+            }
+        },
+        {
+            "user": {
+                "name": "randome guy probably",
+		        "id": 123,
+		        "age": null,
+		        "birthday": "2025-08-10T15:42:17.123+02",
+		        "driverLisenceId": "a number that you can't know"
+            },
+            "medicConditionDO": {
+                "id": 987,
+                "deceases": "idk, maybe conding fever",
+                "timeCreated": 333333333333333,
+                "userId": 789
+            }
+        }
+    ]
+]

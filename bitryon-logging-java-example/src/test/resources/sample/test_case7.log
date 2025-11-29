@@ -1,0 +1,24 @@
+2025-08-11 16:01:43.290|main-http-nio-80-exec-10-49-5|7u7ucgyJPCgVmJAeq0vcsCd2DQpu3FrZ|4-1|JSON|
+UserServiceImpl.java#io.bitryon.example.web.service.rpc.UserServiceImpl#save#60#|
+[
+    {
+        "user": {
+            "name": "br***ng",
+            "id": 0,
+            "age": 1001,
+        	"birthday": "2025-08-10T15:42:17.123+02",
+            "driverLisenceId": "******"
+        }
+    }
+]
+2025-08-11 16:01:43.291|main-http-nio-80-exec-10-49-5|7u7ucgyJPCgVmJAeq0vcsCd2DQpu3FrZ|4-2|JSON|
+UserServiceImpl.java#io.bitryon.example.web.service.rpc.UserServiceImpl#save#60#R|
+[
+    {
+        "name": "br***ng",
+        "id": 789,
+        "age": 1001,
+        "birthday": "2025-08-10T15:42:17.123+02",
+        "driverLisenceId": "******"
+    }
+]

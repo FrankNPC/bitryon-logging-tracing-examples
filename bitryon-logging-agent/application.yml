@@ -1,0 +1,39 @@
+spring:
+  shutdown: graceful
+  application:
+    name: bitryon-logging-agent
+  task.scheduling.pool.size: 10
+
+bitryon:
+  logging:
+    agent:
+      server-url: wss://localhost/  # official log ingest host
+      app-key: gwI718pjfZO7LpGW1INf9ME0cnYnjeE9dfnaN4c2VqZgW4ce # the app key issued through web-portal after activiated the app
+      host-id: prd-test-host-please-change-to-your-unique-host-id # your host-id, this is to differentiate files between hosts. less than 256 characters
+      watch-dirs: ./logs # point to the folder of the app/service
+      retry-cycle-timeout: 3600000 # after the time, it won't retry files. [the client retries the file if session or file exceptions or errors occur.]
+      file-idle-timeout: 60000 # after the time, the file to wait for new data writes will be removed from the queue. [The file watcher will always watch for the new data.]
+      file-concurrency: 4 # max 10. limit the concurrect of the file transmit
+
+    #remove the section if no use. 
+    log-convertor: # with it to convert your logs to bitryon' style. 
+      target-dir: ./logs # required. the dest folder that converting files to upload, if the same with bitryon.logging.agent.watch-dirs
+      watch-dirs: ./source # required. the source folder. corrently only support .gz and .log.
+      seperator: "\n" # read the log by the seperator. default \n
+      log-date-time-format: yyyy-MM-dd HH:mm:ss.SSS # format the date to the bitryon's style. should be the same with the formatter in log-head
+      log-head: '[{"BootInfo":{},"AppNodeConfig":{"version":"1.2.3","program":"1.2.2-1231321.jar","github":{"repository":"RepoOwner/repo","branch":"main","commit":"hashcode","sourcePaths":["src/main/java"]},"internalIp":"1.1.1.1","externalIp":"1.1.1.1","hostId":"node-123.test.test","applicationName":"your-app-name","httpHeaderIdType":1},"LoggerConfig":{"fileName":"./logs/your-app-name","loggerSchemaVersion":"1.0.0","logPretty":false,"printFile":true,"printStdout":true,"logAsync":true,"logLight":false,"fileMaxLength":536870912,"logDateTimeFormat":"yyyy-MM-dd HH:mm:ss.SSS","logSanitizerPatterns":["/JSON/*.*Service*#*/*/SKIP(appKey|encryptionKey|password|sessionId)","/JSON/*Service*/*/MD5$1(longText)"]}}]'
+                    # required. the log-head is to make up a head for the targeted logs
+      extractor: # required. match the pattern to extract required fields from your log, each line by [seperators]
+        time: "^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{3}[+-]\\d{2}:\\d{2})" # required. to extract the time str. If no time in the log, will concat the logs to one for each 1024 lines.
+        time_parser: yyyy-MM-dd'T'HH:mm:ss.SSSXXX # the source log time format, so the agent can parse and format to bitryon's time
+        thread-info: "--- \\[.*\\]\\s*\\[(.*?)\\]\\s+" # optional E.G.[main-123]
+        step: "--- \\[.*\\]\\s*\\[.*\\]\\s+(.*?)\\s+:" # E.G. o.s.b.f.s.DefaultListableBeanFactory
+        payload: " : (.*)$" # leave blank to read entire line as payload
+
+
+logging: # log4j
+  file.name: log/${spring.application.name}.log
+  pattern:
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(%5p) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n%wEx"
+  level: 
+    root: DEBUG

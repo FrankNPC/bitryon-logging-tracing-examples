@@ -1,0 +1,18 @@
+|||||
+UserServiceImpl.java#io.bitryon.example.web.service.rpc.UserServiceImpl#getBySessionId#37#|
+[
+    {
+        "sessionId":"xxx"
+    }
+]
+|||||
+UserServiceImpl.java#io.bitryon.example.web.service.rpc.UserServiceImpl#getBySessionId#37#R|
+[
+    {
+        "name": "randome guy probably",
+        "id": 456,
+        "age": null,
+        "birthday": "2025-08-10T15:42:17.123+02",
+        "driverLisenceId": "a number that you can't know"
+    }
+]

@@ -1,0 +1,36 @@
+2025-08-11 16:01:41.283|main-http-nio-80-exec-1-40-5|5o0ku57lL7LVoG3N4Pqm89byaX5tBwHi|7|JSON|
+MedicDAO.java#io.bitryon.example.web.dao.MedicDAO#query#17#|
+[
+    {
+        "userId": 1754928101015,
+        "page": {
+            "size": 123,
+            "offset": 0
+        }
+    }
+]
+2025-08-11 16:01:41.284|main-http-nio-80-exec-1-40-5|5o0ku57lL7LVoG3N4Pqm89byaX5tBwHi|8|JSON|
+MedicDAO.java#io.bitryon.example.web.dao.MedicDAO#query#17#R|
+[
+    [
+        {
+            "id": 321,
+            "deceases": "idk, maybe conding fever",
+            "timeCreated": 111111111111111,
+            "userId": 123
+        },
+        {
+            "id": 654,
+            "deceases": "idk, maybe conding fever",
+            "timeCreated": 222222222222222,
+            "userId": 456
+        },
+        {
+            "id": 987,
+            "deceases": "idk, maybe conding fever",
+            "timeCreated": 333333333333333,
+            "userId": 789
+        }
+    ]
+]
+

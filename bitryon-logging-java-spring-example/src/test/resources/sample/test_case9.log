@@ -1,0 +1,17 @@
+|||5-1|JSON|
+UserServiceImpl.java#io.bitryon.example.web.service.rpc.UserServiceImpl#getBySessionId#37#|
+[
+    {
+        "sessionId":"xxx"
+    }
+]
+|||5-2|JSON|
+UserServiceImpl.java#io.bitryon.example.web.service.rpc.UserServiceImpl#getBySessionId#37#R|
+[
+    {
+        "name": "randome guy2 probably",
+        "id": 456,
+        "birthday": "2012-08-10T10:42:17.123+02",
+        "driverLisenceId": "another DL ID"
+    }
+]

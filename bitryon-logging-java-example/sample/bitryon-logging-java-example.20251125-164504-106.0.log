@@ -1,0 +1,95 @@
+2025-11-25T21:45:04.118Z||0HYW2WN3AVgCXBsJ||CONF||
+[{
+	"BootInfo": {
+		"program": "1.2.2-1231321.jar",
+		"region": "use-1",
+		"version": "1.2.3",
+		"external-ip": "12.2.2.2",
+		"internal-ip": "12.2.2.2",
+		"platform": "cloud=aws"
+	},
+	"AppNodeConfig": {
+		"httpHeaderIdType": 1,
+		"applicationName": "bitryon-logging-java-example",
+		"hostId": "node-123.test.test"
+	},
+	"Github": {
+		"host": "https://github.com/",
+		"repository": "RepoOwner/bitryon-logging-java-example",
+		"branch": "master",
+		"commit": "xxxxxxx",
+		"sourcePaths": [
+			"src/main/java"
+		]
+	},
+	"LoggerConfig": {
+		"fileName": "./logs/bitryon-logging-java-example",
+		"logDateTimeFormat": "yyyy-MM-dd HH:mm:ss.SSS",
+		"loggerSchemaVersion": "1.0",
+		"fileMaxLength": 536870912,
+		"logLight": false,
+		"logPretty": true,
+		"printFile": true,
+		"printStdout": true,
+		"logAsync": true,
+		"logSanitizerPatterns": [
+			"/JSON/*Service*.java*.service.*UserService*#*/*/MASK(driverLisenceId)/*/MASK$2(name)//SKIP(birthday)",
+			"/JSON/*MedicService*#*/*/MASK(driverLisenceId)/*/MASK$2(name)//SKIP(birthday)",
+			"/JSON/*.java*.Medic*#*/*/MASK$4(deceases)/yyyy-MM-dd HH:mm:ss.ssss/DATE_FORMATER(timeCreated)",
+			"/HTTP/*LoggingHttpRequestWebReader#readHttpRequest*/*/MASK(driverLisenceId)/*/MASK$2(name)//SKIP(birthday)"
+		]
+	}
+}]
+2025-11-25 21:45:05.085|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|1|JSON|
+MedicService.java#io.bitryon.example.java.service.MedicService#callSelfInvocation#63#|
+[{
+	"testString": "random message"
+}]
+2025-11-25 21:45:05.087|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|2|JSON|
+MedicService.java#io.bitryon.example.java.service.MedicService#callSelfInvocation_protected#68#|
+[{
+	"testString": "random message"
+}]
+2025-11-25 21:45:05.088|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|3|JSON|
+MedicService.java#io.bitryon.example.java.service.MedicService#callSelfInvocation_friendly#73#|
+[{
+	"testString": "random message"
+}]
+2025-11-25 21:45:05.088|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|4|JSON|
+MedicService.java#io.bitryon.example.java.service.MedicService#callSelfInvocation_private#78#|
+[{
+	"testString": "random message"
+}]
+2025-11-25 21:45:05.088|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|5|JSON|
+MedicService.java#io.bitryon.example.java.service.MedicService#callSelfInvocation_final#83#|
+[{
+	"testString": "random message"
+}]
+2025-11-25 21:45:05.089|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|6|JSON|
+MedicService.java#io.bitryon.example.java.service.MedicService#callSelfInvocation_final#83#R|
+["1764107105088"]
+2025-11-25 21:45:05.089|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|7|JSON|
+MedicService.java#io.bitryon.example.java.service.MedicService#callSelfInvocation_private#78#R|
+["1764107105089"]
+2025-11-25 21:45:05.089|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|8|JSON|
+MedicService.java#io.bitryon.example.java.service.MedicService#callSelfInvocation_friendly#73#R|
+["1764107105089"]
+2025-11-25 21:45:05.089|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|9|JSON|
+MedicService.java#io.bitryon.example.java.service.MedicService#callSelfInvocation_protected#68#R|
+["1764107105089"]
+2025-11-25 21:45:05.090|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|10|JSON|
+MedicService.java#io.bitryon.example.java.service.MedicService#callSelfInvocation#63#R|
+["1764107105090"]
+2025-11-25 21:45:34.369|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|11-1|JSON|
+UserServiceImpl.java#io.bitryon.example.java.service.rpc.UserServiceImpl#getBySessionId#36#|
+[{
+	"sessionId": "random message"
+}]
+2025-11-25 21:45:34.370|main#1|S4BniGHVLWmTK1ieZBD0rYVeUQdVFk5t|11-2|JSON|
+UserServiceImpl.java#io.bitryon.example.java.service.rpc.UserServiceImpl#getBySessionId#36#R|
+[{
+	"name": "ra***ly",
+	"id": 456,
+	"driverLisenceId": "****************************",
+	"age": null
+}]

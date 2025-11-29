@@ -1,0 +1,12 @@
+.DS_Store
+.classpath
+.project
+.settings
+/target
+/bin
+/backup
+/docs
+/node_modules
+/log
+/logs
+**/*.gz

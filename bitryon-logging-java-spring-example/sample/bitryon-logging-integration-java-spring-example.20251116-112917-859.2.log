@@ -1,0 +1,68 @@
+2025-11-16T16:29:17.863Z||w1vN1MJ2w4NzDJvF||C||[{"BootInfo":{"program":"1.2.2-1231321.jar","region":"use-1","version":"1.2.3","external-ip":"12.2.2.2","internal-ip":"12.2.2.2","platform":{"cloud":"aws"}},"AppNodeConfig":{"hostId":"node-123.test.test","applicationName":"bitryon-logging-integration-java-spring-example","httpHeaderIdType":1},"Github":{"host":"https://github.com/","repository":"RepoOwner/bitryon-logging-integration-java-spring-example","branch":"master","commit":"xxxxxxx","sourcePaths":["src/main/java"]},"LoggerConfig":{"fileName":"./logs/bitryon-logging-integration-java-spring-example","logPretty":false,"printFile":true,"printStdout":true,"logAsync":true,"logLight":true,"fileMaxLength":536870912,"logDateTimeFormat":"yyyy-MM-dd HH:mm:ss.SSS","loggerSchemaVersion":"1.0","logSanitizerPatterns":["/JSON/*Service*.java*.service.*UserService*#*/*/MASK(driverLisenceId)/*/MASK$2(name)//SKIP(birthday)","/JSON/*MedicService*#*/*/MASK(driverLisenceId)/*/MASK$2(name)//SKIP(birthday)","/JSON/*.java*.Medic*#*/*/MASK$4(deceases)/yyyy-MM-dd HH:mm:ss.ssss/DATE_FORMATER(timeCreated)","/HTTP/*LoggingHttpRequestWebReader#readHttpRequest*/*/MASK(driverLisenceId)/*/MASK$2(name)//SKIP(birthday)"]}}]
+2025-11-16 16:29:21.915|40|2QCokamwca3jdavw7wsCCDuLsT4lVEZb|1|H|#LoggingHttpRequestWebReader#readHttpRequest#31|[null,{"remoteHost":"0:0:0:0:0:0:0:1:57618"},{"method":"GET"},{"requestURL":"http://localhost/api/user/save"},{"headers":{}},{"body":{"name":["br***ng"],"driverLisenceId":["******"],"age":["1001"]}}]
+2025-11-16 16:29:22.191|40|2QCokamwca3jdavw7wsCCDuLsT4lVEZb|2|J|#ForStaticMethod#runStatic#15#|[{"userId":0}]
+2025-11-16 16:29:22.191|40|2QCokamwca3jdavw7wsCCDuLsT4lVEZb|3|J|#ForStaticMethod#runStatic#15#R|["e1d2fb44-c29c-4925-93cc-99081578eaf8"]
+2025-11-16 16:29:22.200|40|2QCokamwca3jdavw7wsCCDuLsT4lVEZb|4|J|#UserService#save#0#|[{"user":{"name":"broking","id":0,"age":1001,"birthday":null,"driverLisenceId":"123456"}}]
+2025-11-16 16:29:22.537|42|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|1|H|#LoggingHttpRequestWebReader#readHttpRequest#31|[null,{"remoteHost":"0:0:0:0:0:0:0:1:57619"},{"method":"GET"},{"requestURL":"http://localhost/api/medic/save"},{"headers":{}},{"body":{"id":["123"],"deceases":["unkown"]}}]
+2025-11-16 16:29:22.540|42|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|2|J|#MedicConditionController#save#64|["save request paylod, should be with trace",{"id":123,"deceases":"unkown","timeCreated":0,"userId":0}]
+2025-11-16 16:29:22.540|42|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|3|J|#ForStaticMethod#query#11#|[{"userId":1763310562540,"page":null}]
+2025-11-16 16:29:22.540|42|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|4|J|#ForStaticMethod#query#11#R|["7c061630-52e8-425c-bf95-5f7841807eaf"]
+2025-11-16 16:29:22.548|42|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|5|J|#MedicService#save#48#|[{"condition":{"id":123,"deceases":"unkown","timeCreated":0,"userId":0}}]
+2025-11-16 16:29:22.549|42|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|6|J|#MedicDAO#save#36#|[{"condition":{"id":123,"deceases":"unkown","timeCreated":0,"userId":0}}]
+2025-11-16 16:29:22.549|42|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|7|J|#MedicDAO#save#36#R|[{"id":123,"deceases":"unkown","timeCreated":0,"userId":0}]
+2025-11-16 16:29:22.549|42|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|8|J|#MedicService#save#54|[{"userId":0}]
+2025-11-16 16:29:22.864|43|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|8-1|H|#LoggingHttpRequestWebReader#readHttpRequest#31|[null,{"remoteHost":"127.0.0.1:57626"},{"method":"POST"},{"requestURL":"http://localhost/remote_api/user/get_by_id"},{"headers":{}},{"body":{}}]
+2025-11-16 16:29:22.864|44|2QCokamwca3jdavw7wsCCDuLsT4lVEZb|4-1|H|#LoggingHttpRequestWebReader#readHttpRequest#31|[null,{"remoteHost":"127.0.0.1:57625"},{"method":"POST"},{"requestURL":"http://localhost/remote_api/user/save"},{"headers":{}},{"body":{}}]
+2025-11-16 16:29:23.031|43|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|8-2|J|#UserServiceImpl#getById#26#|[{"userId":0}]
+2025-11-16 16:29:23.032|43|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|8-3|T|#UserServiceImpl#getById#31|This should be remote service, will be with trace for user 0
+2025-11-16 16:29:23.044|43|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|8-4|J|#UserServiceImpl#getById#26#R|[{"name":"randome guy probably","id":123,"age":null,"birthday":"Sun Aug 10 09:42:17 EDT 2025","driverLisenceId":"a number that you can't know"}]
+2025-11-16 16:29:23.303|42|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|9|J|#MedicService#save#54R|[{"name":"ra***ly","id":123,"age":null,"driverLisenceId":"****************************"}]
+2025-11-16 16:29:23.304|42|5P4VT0mIdKn92pmmstlXnq3afvic5ykN|10|J|#MedicService#save#48#R|[{"user":{"name":"ra***ly","id":123,"age":null,"driverLisenceId":"****************************"},"medicConditionDO":{"id":123,"deceases":"unkown","timeCreated":0,"userId":0}}]
+2025-11-16 16:29:23.303|40|2QCokamwca3jdavw7wsCCDuLsT4lVEZb|5|J|#UserService#save#0#R|[{"name":"broking","id":789,"age":1001,"birthday":"Sun Aug 10 09:42:17 EDT 2025","driverLisenceId":"123456"}]
+2025-11-16 16:29:23.303|40|2QCokamwca3jdavw7wsCCDuLsT4lVEZb|6|J|#ForStaticMethod#runStatic#15#|[{"userId":789}]
+2025-11-16 16:29:23.304|40|2QCokamwca3jdavw7wsCCDuLsT4lVEZb|7|J|#ForStaticMethod#runStatic#15#R|["e1d2fb44-c29c-4925-93cc-99081578eaf8"]
+2025-11-16 16:29:23.294|44|2QCokamwca3jdavw7wsCCDuLsT4lVEZb|4-2|J|#UserServiceImpl#save#62#|[{"user":{"name":"broking","id":0,"age":1001,"birthday":null,"driverLisenceId":"123456"}}]
+2025-11-16 16:29:23.294|44|2QCokamwca3jdavw7wsCCDuLsT4lVEZb|4-3|J|#UserServiceImpl#save#62#R|[{"name":"broking","id":789,"age":1001,"birthday":"Sun Aug 10 09:42:17 EDT 2025","driverLisenceId":"123456"}]
+2025-11-16 16:29:24.020|47|6IGF9SBNdvZyjjNGCbVvKdKGBZLIr0uC|1|H|#LoggingHttpRequestWebReader#readHttpRequest#31|[null,{"remoteHost":"0:0:0:0:0:0:0:1:57632"},{"method":"GET"},{"requestURL":"http://localhost/api/medic/test_async_email"},{"headers":{}},{"body":{}}]
+2025-11-16 16:29:24.033|47|6IGF9SBNdvZyjjNGCbVvKdKGBZLIr0uC|2|J|#SMTPEmailScheduler#unHookedThreadDelivery#41#|[{"recipient":"test@email.email","verificationUrl":"http://localhost/unHookedThreadDelivery/1763310564031"}]
+2025-11-16 16:29:24.039|47|6IGF9SBNdvZyjjNGCbVvKdKGBZLIr0uC|3|J|#SMTPEmailScheduler#unHookedThreadDelivery#41#R|[null]
+2025-11-16 16:29:25.159|43|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|21-1|H|#LoggingHttpRequestWebReader#readHttpRequest#31|[null,{"remoteHost":"127.0.0.1:57625"},{"method":"POST"},{"requestURL":"http://localhost/remote_api/user/get_by_id"},{"headers":{}},{"body":{}}]
+2025-11-16 16:29:25.160|43|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|21-2|J|#UserServiceImpl#getById#26#|[{"userId":456}]
+2025-11-16 16:29:25.160|43|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|21-3|T|#UserServiceImpl#getById#31|This should be remote service, will be with trace for user 456
+2025-11-16 16:29:25.160|43|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|21-4|J|#UserServiceImpl#getById#26#R|[{"name":"randome guy probably","id":123,"age":null,"birthday":"Sun Aug 10 09:42:17 EDT 2025","driverLisenceId":"a number that you can't know"}]
+2025-11-16 16:29:25.138|49|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|5-1|H|#LoggingHttpRequestWebReader#readHttpRequest#31|[null,{"remoteHost":"127.0.0.1:57625"},{"method":"POST"},{"requestURL":"http://localhost/remote_api/user/get_by_session_id"},{"headers":{}},{"body":{}}]
+2025-11-16 16:29:25.142|49|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|5-2|J|#UserServiceImpl#getBySessionId#45#|[{"sessionId":"xxx"}]
+2025-11-16 16:29:25.142|49|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|5-3|J|#UserServiceImpl#getBySessionId#45#R|[{"name":"randome guy probably","id":456,"age":null,"birthday":"Sun Aug 10 09:42:17 EDT 2025","driverLisenceId":"a number that you can't know"}]
+2025-11-16 16:29:25.107|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|1|H|#LoggingHttpRequestWebReader#readHttpRequest#31|[null,{"remoteHost":"0:0:0:0:0:0:0:1:57632"},{"method":"GET"},{"requestURL":"http://localhost/api/medic/query"},{"headers":{}},{"body":{"session_id":["xxx"],"offset":["0"],"size":["123"]}}]
+2025-11-16 16:29:25.123|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|2|J|#ForStaticMethod#runStatic#15#|[{"userId":1763310565123}]
+2025-11-16 16:29:25.123|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|3|J|#ForStaticMethod#runStatic#15#R|["e1d2fb44-c29c-4925-93cc-99081578eaf8"]
+2025-11-16 16:29:25.123|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|4|J|#MedicService#query#28#|[{"sessionId":"xxx","page":{"size":123,"offset":0}}]
+2025-11-16 16:29:25.124|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|5|J|#MedicService#query#29|[{"sessionId":"xxx"}]
+2025-11-16 16:29:25.145|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|6|J|#MedicService#query#29R|[{"name":"ra***ly","id":456,"age":null,"driverLisenceId":"****************************"}]
+2025-11-16 16:29:25.145|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|7|J|#MedicDAO#query#17#|[{"userId":456,"page":{"size":123,"offset":0}}]
+2025-11-16 16:29:25.145|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|8|J|#MedicDAO#query#17#R|[[{"id":321,"deceases":"idk, maybe conding fever","timeCreated":111111111111111,"userId":123},{"id":654,"deceases":"idk, maybe conding fever","timeCreated":222222222222222,"userId":456},{"id":987,"deceases":"idk, maybe conding fever","timeCreated":333333333333333,"userId":789}]]
+2025-11-16 16:29:25.145|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|9|J|#MedicService#callSelfInvocation#68#|[{"testString":"xxx"}]
+2025-11-16 16:29:25.146|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|10|J|#MedicService#callSelfInvocation_protected#73#|[{"testString":"xxx"}]
+2025-11-16 16:29:25.146|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|11|J|#MedicService#callSelfInvocation_friendly#78#|[{"testString":"xxx"}]
+2025-11-16 16:29:25.147|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|12|J|#MedicService#callSelfInvocation_private#83#|[{"testString":"xxx"}]
+2025-11-16 16:29:25.147|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|13|J|#MedicService#callSelfInvocation_final#88#|[{"testString":"xxx"}]
+2025-11-16 16:29:25.147|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|14|J|#MedicService#callSelfInvocation_final#88#R|["1763310565147"]
+2025-11-16 16:29:25.148|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|15|J|#MedicService#callSelfInvocation_private#83#R|["1763310565148"]
+2025-11-16 16:29:25.148|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|16|J|#MedicService#callSelfInvocation_friendly#78#R|["1763310565148"]
+2025-11-16 16:29:25.148|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|17|J|#MedicService#callSelfInvocation_protected#73#R|["1763310565148"]
+2025-11-16 16:29:25.148|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|18|J|#MedicService#callSelfInvocation#68#R|["1763310565148"]
+2025-11-16 16:29:25.149|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|19|J|#MedicService#lambda$0#38|[{"userId":123}]
+2025-11-16 16:29:25.158|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|20|J|#MedicService#lambda$0#38R|[{"name":"ra***ly","id":123,"age":null,"driverLisenceId":"****************************"}]
+2025-11-16 16:29:25.158|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|21|J|#MedicService#lambda$0#38|[{"userId":456}]
+2025-11-16 16:29:25.161|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|22|J|#MedicService#lambda$0#38R|[{"name":"ra***ly","id":123,"age":null,"driverLisenceId":"****************************"}]
+2025-11-16 16:29:25.161|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|23|J|#MedicService#lambda$0#38|[{"userId":789}]
+2025-11-16 16:29:25.166|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|24|J|#MedicService#lambda$0#38R|[{"name":"ra***ly","id":123,"age":null,"driverLisenceId":"****************************"}]
+2025-11-16 16:29:25.166|48|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|25|J|#MedicService#query#28#R|[[{"user":{"name":"ra***ly","id":123,"age":null,"driverLisenceId":"****************************"},"medicConditionDO":{"id":321,"deceases":"idk, maybe conding fever","timeCreated":111111111111111,"userId":123}},{"user":{"name":"ra***ly","id":123,"age":null,"driverLisenceId":"****************************"},"medicConditionDO":{"id":654,"deceases":"idk, maybe conding fever","timeCreated":222222222222222,"userId":456}},{"user":{"name":"ra***ly","id":123,"age":null,"driverLisenceId":"****************************"},"medicConditionDO":{"id":987,"deceases":"idk, maybe conding fever","timeCreated":333333333333333,"userId":789}}]]
+2025-11-16 16:29:25.163|44|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|23-1|H|#LoggingHttpRequestWebReader#readHttpRequest#31|[null,{"remoteHost":"127.0.0.1:57625"},{"method":"POST"},{"requestURL":"http://localhost/remote_api/user/get_by_id"},{"headers":{}},{"body":{}}]
+2025-11-16 16:29:25.164|44|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|23-2|J|#UserServiceImpl#getById#26#|[{"userId":789}]
+2025-11-16 16:29:25.165|44|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|23-3|T|#UserServiceImpl#getById#31|This should be remote service, will be with trace for user 789
+2025-11-16 16:29:25.165|44|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|23-4|J|#UserServiceImpl#getById#26#R|[{"name":"randome guy probably","id":123,"age":null,"birthday":"Sun Aug 10 09:42:17 EDT 2025","driverLisenceId":"a number that you can't know"}]
+2025-11-16 16:29:25.154|41|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|19-1|H|#LoggingHttpRequestWebReader#readHttpRequest#31|[null,{"remoteHost":"127.0.0.1:57625"},{"method":"POST"},{"requestURL":"http://localhost/remote_api/user/get_by_id"},{"headers":{}},{"body":{}}]
+2025-11-16 16:29:25.156|41|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|19-2|J|#UserServiceImpl#getById#26#|[{"userId":123}]
+2025-11-16 16:29:25.156|41|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|19-3|T|#UserServiceImpl#getById#31|This should be remote service, will be with trace for user 123
+2025-11-16 16:29:25.156|41|5TiqbKklVQrTV9NTQqUDbiJvJ3ylpUlD|19-4|J|#UserServiceImpl#getById#26#R|[{"name":"randome guy probably","id":123,"age":null,"birthday":"Sun Aug 10 09:42:17 EDT 2025","driverLisenceId":"a number that you can't know"}]
