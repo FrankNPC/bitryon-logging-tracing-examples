@@ -170,25 +170,26 @@ Sample:
 
 ```java
 	// In Spring 
-	
-		public static void main(String[] args) {
-			//io.bitryon.logger.boostrap.LoggingProxyInitiation.premain(null); // must load before everything. or add https://github.com/FrankNPC/bitryon-logging-tracing-examples/blob/master/bitryon-logging-java-spring-example/src/main/resources/META-INF/spring.factories 
-			new SpringApplicationBuilder(ServerBootApplication.class).run(args);
+	public static void main(String[] args) {
+		//io.bitryon.logger.boostrap.LoggingProxyInitiation.premain(null); // must load before everything. or add https://github.com/FrankNPC/bitryon-logging-tracing-examples/blob/master/bitryon-logging-java-spring-example/src/main/resources/META-INF/spring.factories 
+		new SpringApplicationBuilder(ServerBootApplication.class).run(args);
 		}
 	
 	// In java
+	public static void main(String[] args) {
 		// 1: load logger agent
 		LoggingProxyInitiation.premain(null);
 
 		// 2: load logger configure
 		LoggerProvider provider = LoggerProvider.getProvider("bitryon_log.properties", null);
-		
+	
 		// 3: load LoggingMethodIntercepter, In spring it doesn't need
 		// Must do to setup LoggingMethodIntercepter and LoggerProvider
 		new LoggingMethodIntercepter(provider);
 		
 		// Or by LoggerFactory default settings
-//		new LoggingMethodIntercepter(LoggerFactory.getLoggerProvider());
+		// new LoggingMethodIntercepter(LoggerFactory.getLoggerProvider());
+	}
 		
 		// use by tradition logger style
 //		private static final Logger logger = LoggerFactory.getLogger();
