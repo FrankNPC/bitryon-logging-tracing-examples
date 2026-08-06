@@ -22,7 +22,7 @@ To import logs from other logging files, configure bitryon.logging.log-convertor
 More explains see src/test/resources/application.xml
 
 
-## Terraform integration ##
+## Terraform integration - internal experient for now, will come soon ASAP ##
 
 
 ```java
