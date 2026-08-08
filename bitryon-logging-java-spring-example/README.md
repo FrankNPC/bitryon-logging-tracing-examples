@@ -291,6 +291,6 @@ See [UserServiceSubscriber](https://github.com/FrankNPC/bitryon-logging-tracing-
 See [ExampleWebServerConfiguration](https://github.com/FrankNPC/bitryon-logging-tracing-examples/blob/master/bitryon-logging-java-spring-example/src/main/java/io/bitryon/example/web/config/ExampleWebServerConfiguration.java)
 
  
-### see example [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-tracing-examples/tree/master/bitryon-logging-java-spring-example) 
+### see example [bitryon-logging-java-spring-example](https://github.com/FrankNPC/bitryon-logging-tracing-examples/tree/master/bitryon-logging-java-spring-example) and [document](https://www.bitryon.io/doc/index.html) 
 
 
