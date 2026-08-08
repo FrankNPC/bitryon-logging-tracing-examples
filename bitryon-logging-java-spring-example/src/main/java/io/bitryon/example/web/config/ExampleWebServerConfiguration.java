@@ -22,6 +22,7 @@ public class ExampleWebServerConfiguration {
 
 	@Resource
 	LoggerProvider bitryonLoggerProvider;
+	//private static final Logger logger = LoggerFactory.getLogger();// in java project, logger.getLoggerProvider() or LoggerFactory.getLoggerProvider()
 
 	// read step log id from last app/service/http request header to form traces, and log http payload for specific paths
 	@Bean

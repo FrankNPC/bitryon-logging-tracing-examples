@@ -15,7 +15,9 @@ import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
 
 import io.bitryon.example.web.service.rpc.UserService;
+import io.bitryon.logger.Logger;
 import io.bitryon.logger.annotation.LoggingUnit;
+import io.bitryon.logger.provider.LoggerFactory;
 import io.bitryon.logger.provider.LoggerProvider;
 import io.bitryon.logger.spring.LoggingHttpClientHeaderWriterInterceptor;
 import io.bitryon.logger.spring.LoggingMethodPointcut;
@@ -39,7 +41,8 @@ public class UserServiceSubscriber<T> extends AbstractServiceSubscriber implemen
 
 	@Resource
 	LoggerProvider bitryonLoggerProvider;
-	
+	//private static final Logger logger = LoggerFactory.getLogger();// in java project, logger.getLoggerProvider() or LoggerFactory.getLoggerProvider()
+
 //	private Advisor[] advisors;
 //	@Override
 //	public Advisor[] getAdvisors() {
