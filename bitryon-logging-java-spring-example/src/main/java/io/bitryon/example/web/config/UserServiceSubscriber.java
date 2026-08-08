@@ -15,9 +15,7 @@ import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
 
 import io.bitryon.example.web.service.rpc.UserService;
-import io.bitryon.logger.Logger;
 import io.bitryon.logger.annotation.LoggingUnit;
-import io.bitryon.logger.provider.LoggerFactory;
 import io.bitryon.logger.provider.LoggerProvider;
 import io.bitryon.logger.spring.LoggingHttpClientHeaderWriterInterceptor;
 import io.bitryon.logger.spring.LoggingMethodPointcut;
